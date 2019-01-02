@@ -21,7 +21,7 @@ pipeline {
       stage ('Compile-Package') {
             steps {
                 git "https://github.com/quratulainleghari/my-app.git"
-               sh 'mvn clean package'
+               sh 'mvn -f /var/lib/jenkins/workspace/all-plugins-pipeline/my-app-master package'
            
             }
           post {
