@@ -57,7 +57,12 @@ sh "${scannerhome}/bin/sonar-runner -D sonar.projectKey=my-app-master -D sonar.p
     }
     }
     }
-  
+       stage ('Jmeter test'){
+          steps {
+       sh '/var/lib/jenkins/plugins/apache-jmeter-5.0/bin/jmeter.sh -n -t /var/lib/jenkins/plugins/apache-jmeter-5.0/extras/Test.jmx -l $WORKSPACE/build-result.jtl'
+          }
+       }
+       
        stage ('Email Notification'){
           steps{
       emailext (
