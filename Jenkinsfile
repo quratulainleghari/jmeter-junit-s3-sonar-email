@@ -55,11 +55,11 @@ sh "${scannerhome}/bin/sonar-runner -D sonar.projectKey=my-app-master -D sonar.p
     sh "scp  /var/lib/jenkins/workspace/sonar-pipeline/my-app-master/target/*.war ubuntu@18.234.76.16:/opt/tomcat/apache-tomcat-8.5.37/webapps"
      
     }
-     post {
-        success {
-           perfReport 'build-result.jtl'
-        }
-     }
+    // post {
+       // success {
+         //  perfReport 'build-result.jtl'
+       // }
+     //}
     }
     }
        stage ('Jmeter test'){
